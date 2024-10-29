@@ -59,8 +59,8 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            docker stop husk-was
-            docker rm husk-was
-            docker image prune -af
-            docker pull ${{ secrets.DOCKER_USERNAME }}/husk-was
-            docker run -d -p 8080:8080 --name husk-was -e TZ=Asia/Seoul ${{ secrets.DOCKER_USERNAME }}/husk-was
+            sudo docker stop husk-was
+            sudo docker rm husk-was
+            sudo docker image prune -af
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/husk-was
+            sudo docker run -d -p 8080:8080 --name husk-was -e TZ=Asia/Seoul ${{ secrets.DOCKER_USERNAME }}/husk-was
